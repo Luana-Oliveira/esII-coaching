@@ -54,6 +54,9 @@
                         @endif
                         @endauth
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Teste sz</a>
+                    </li>
                   </ul>
                   @endif
                   <form class="form-inline mt-2 mt-md-0">
