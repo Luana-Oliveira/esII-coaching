@@ -119,7 +119,7 @@
         <h3 class="pb-4 mb-4 font-italic border-bottom">
           Sobre mim
         </h3>
-        <p>sou um cara legal.</p>
+        <p>sou um cara legal. Lindo e maravilhoso, também sou inteligente xD</p>
       </div>
 
       <aside class="col-md-4 blog-sidebar">
