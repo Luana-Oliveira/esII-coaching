@@ -28,3 +28,5 @@ Route::get('login/google/callback', 'Auth\LoginController@handleProviderGoogleCa
 Route::get('login/github', 'Auth\LoginController@redirectToProviderGithub');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderGithubCallback');
 
+Route::resource('/consultations','ConsultationController');
+

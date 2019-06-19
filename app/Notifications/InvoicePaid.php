@@ -56,10 +56,10 @@ class InvoicePaid extends Notification
         $url = url('/invoice/'.$this->invoice->id);
 
          return (new MailMessage)
-                ->greeting('Hello!')
-                ->line('One of your invoices has been paid!')
-                ->action('View Invoice', $url)
-                ->line('Thank you for using our application!');
+                ->greeting('Olá!')
+                ->line('Seus produtos foram baixados!')
+                ->action('Visualizar produtos', $url)
+                ->line('Obrigado por usar nossa plataforma!');
      }
 
     /**
@@ -71,7 +71,8 @@ class InvoicePaid extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'from' => ['address' => 'example@example.com', 'name' => 'App Name'],
+            'reply_to' => ['address' => 'example@example.com', 'name' => 'App Name']
         ];
     }
 
