@@ -312,24 +312,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($produtoservicos as $produtoservico)
-				<tr>
-					<td>
-						<span class="custom-checkbox">
-							<input type="checkbox" id="checkbox{{$produtoservico->id}}"  name="options[]" value="{{$produtoservico->id}}">
-							<label for="checkbox{{$produtoservico->id}}"></label>
-						</span>
-					</td>
-					<td>{{ $produtoservico->nome }}</td>
-					<td>{{ $produtoservico->descricao }}</td>
-					<td>{{ $produtoservico->preco }}</td>
-					<td>{{ $produtoservico->tipo }}</td>
-					<td>
-						<a href="#editarProdutoServico" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-						<a href="#excluirProdutoServico" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-					</td>
-				</tr>
-				@endforeach
+				@if(!empty($produtoservicos))
+					@foreach($produtoservicos as $produtoservico)
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox{{$produtoservico->id}}"  name="options[]" value="{{$produtoservico->id}}">
+								<label for="checkbox{{$produtoservico->id}}"></label>
+							</span>
+						</td>
+						<td>{{ $produtoservico->nome }}</td>
+						<td>{{ $produtoservico->descricao }}</td>
+						<td>{{ $produtoservico->preco }}</td>
+						<td>{{ $produtoservico->tipo }}</td>
+						<td>
+							<a href="#editarProdutoServico" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a href="#excluirProdutoServico" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>
+					@endforeach
 			</tbody>
 		</table>
 
@@ -448,7 +449,9 @@
 		</div>
 	</div>
 </div>
-
+@else
+	<h4>Não tem serviços ou produtos cadastrados</h4>
+@endif
 
 
 @endsection
