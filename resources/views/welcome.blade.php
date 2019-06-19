@@ -42,7 +42,7 @@
       @if (Route::has('login'))
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Produtos e Serviços</a>
+          <a class="nav-link" href="{{ url('/produtoservicos') }}">Produtos e Serviços</a>
         </li>
         <li class="nav-item active">
           @auth
