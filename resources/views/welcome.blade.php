@@ -23,6 +23,7 @@
       -ms-user-select: none;
       user-select: none;
     }
+<<<<<<< HEAD
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -78,6 +79,64 @@
     </div>
   </div>
 
+=======
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">ESII Coaching</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      @if (Route::has('login'))
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url('/produtoservicos') }}">Produtos e Serviços</a>
+        </li>
+        <li class="nav-item active">
+          @auth
+          <a class="nav-link" href="{{ url('/home') }}">VIP</a>
+          @else
+          <a class="nav-link" href="{{ route('login') }}">Login</a>
+        </li>
+        <li class="nav-item active">
+          @if (Route::has('register'))
+          <a class="nav-link" href="{{ route('register') }}">Registrar</a>
+          @endif
+          @endauth
+        </li>
+      </ul>
+      @endif
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="jumbotron p-10 p-md-10 text-white rounded bg-dark">
+    <div class="col-md-10 px-0">
+      <h1 class="display-4 font-italic">Exemplo aleatório de post, para instigar a pessoa a logar</h1>
+      <p class="lead my-3">Para continuar lendo, por favor faça login no site sz</p>
+      @if (Route::has('login'))
+      @auth
+      <p class="lead mb-0"><a href="{{ url('/home') }}" class="text-white font-weight-bold">Continuar lendo...</a></p>
+      @else
+      <p class="lead mb-0"><a href="{{ route('login') }}" class="text-white font-weight-bold">Continuar lendo...</a></p>
+      @endauth
+      @endif
+    </div>
+  </div>
+
+>>>>>>> 497e45c5bd6d255b8edf481f283ff0feeef84d94
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -134,4 +193,8 @@
     </div>
   </main><!-- /.container -->
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 497e45c5bd6d255b8edf481f283ff0feeef84d94
