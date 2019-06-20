@@ -60,7 +60,8 @@ class ProduServiController extends Controller
      */
     public function show($id)
     {
-        //
+        $produtoservicos = ProdutoServico::findOrFail($id);
+        return view('produtoservicos.show', compact('produtoservicos'));
     }
 
     /**

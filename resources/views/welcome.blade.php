@@ -86,7 +86,7 @@
           <h3 class="mb-0">Anúncio de Produto</h3>
           <div class="mb-1 text-muted">7 de Junho</div>
           <p class="card-text mb-auto">Produto que vai revolucionar sua vida psicológica, e te animar xD</p>
-          <a href="#" class="stretched-link">É AQUI ONDE VC COLOCA O ACESSO A PAG PRODUTOS E SERVIÇOS...</a>
+          <a href="{{ url('/produtoservicos') }}" class="stretched-link">Saber mais...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
@@ -102,7 +102,7 @@
           <h3 class="mb-0">Anúncio de Serviço</h3>
           <div class="mb-1 text-muted">8 de Junho</div>
           <p class="mb-auto">Serviço é importante blá blá blá blá.</p>
-          <a href="#" class="stretched-link">É AQUI ONDE VC COLOCA O ACESSO A PAG PRODUTOS E SERVIÇOS...</a>
+          <a href="{{ url('/produtoservicos') }}" class="stretched-link">Saber mais...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">

@@ -29,6 +29,7 @@ Route::get('login/github', 'Auth\LoginController@redirectToProviderGithub');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderGithubCallback');
 
 Route::get('/produtoservicos', 'ProduServiController@index')->name('produtoservicos');
+Route::get('/produtoservico/{id}', 'ProduServiController@show')->name('produtoservicomostrar'); 
 
 Route::middleware(['auth','can:admin'])->group(function(){
     

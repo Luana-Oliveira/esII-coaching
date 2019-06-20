@@ -22,7 +22,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="#">ESII Coaching</a>
+		<a class="navbar-brand" href="/">ESII Coaching</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
 			aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -35,12 +35,6 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="{{ url('/home') }}">VIP</a>
 				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="{{ route('register') }}">Registrar</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="{{ route('login') }}">Login</a>
-				</li>
 			</ul>
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -52,77 +46,34 @@
 		<div class="row">
 			<div class="col-md-8 blog-main">
 				<h3 class="pb-4 mb-4 font-italic border-bottom">
-					Sobre mim
+					Produtos & Serviços
 				</h3>
+				@php
+					$contador_div=0;
+				@endphp
 				<div class="card-deck" style="width: 70rem;">
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Produto x</p>
-						</div>
+				@foreach($produtoservicos as $produtoservico)
+					<div class="card col-md-3 bg-dark">
+							<img class="card-img-top"
+								src="https://img.icons8.com/ios-glyphs/500/000000/shopping-bag-full.png"
+								alt="Imagem de capa do card">
+							<div class="card-body">
+								<a href="{{ url("/produtoservico/$produtoservico->id") }}" > {{ $produtoservico->nome }} </a>
+							</div>
 					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Produto y</p>
+					@php
+						$contador_div++;
+					@endphp
+					@if($contador_div == 4)
 						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Serviço x</p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Serviço y</p>
-						</div>
-					</div>
-				</div>
-				<br>
-				<div class="card-deck" style="width: 70rem;">
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Produto x</p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Produto y</p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Serviço x</p>
-						</div>
-					</div>
-					<div class="card">
-						<img class="card-img-top"
-							src="https://hypescience.com/wp-content/uploads/2015/01/galaxia-hercules-a-2-150x150.jpg"
-							alt="Imagem de capa do card">
-						<div class="card-body">
-							<p class="card-text">Serviço y</p>
-						</div>
-					</div>
-				</div>
+						<br>
+						<div class="card-deck" style="width: 70rem;">
+						@php
+						$contador_div=0;
+						@endphp	
+					@endif
+				@endforeach
+				
 			</div>
 		</div>
 		</div>
